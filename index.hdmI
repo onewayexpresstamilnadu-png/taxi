@@ -1,180 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ONE WAY EXPRESS - Customer Driver Admin</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
-header{background:linear-gradient(135deg,#0f172a,#2563eb);color:#fff;text-align:center;padding:24px 14px}
-header h1{margin:0;font-size:29px}header p{margin:7px 0;font-weight:bold}.wrap{max-width:950px;margin:auto;padding:14px}
-.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.tabs button{flex:1;min-width:105px;border:0;padding:13px;border-radius:12px;font-weight:bold;background:#dce5f5}.tabs button.active{background:#2563eb;color:#fff}
-.panel{display:none}.panel.active{display:block}.card{background:white;border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 5px 18px #0001}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{font-weight:bold;font-size:14px}input,select{width:100%;padding:12px;margin-top:6px;border:1px solid #ccd5e3;border-radius:10px;font-size:15px}.full{grid-column:1/-1}
-.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.car{padding:14px;border:2px solid #dbe4f5;border-radius:14px;text-align:center;cursor:pointer}.car.selected{border-color:#2563eb;background:#eff6ff}
-.btn{width:100%;padding:13px;border:0;border-radius:11px;color:#fff;font-weight:bold;font-size:16px;margin-top:10px;cursor:pointer}.blue{background:#2563eb}.green{background:#16a34a}.dark{background:#111827}.orange{background:#ea580c}.red{background:#dc2626}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.info{background:#eff6ff;border-radius:12px;padding:13px;margin-top:12px}.fare{font-size:20px;font-weight:bold}.small{font-size:13px;color:#667085}
-.job{border:1px solid #dbe4f5;border-radius:13px;padding:13px;margin:10px 0;background:#fff}.status{font-weight:bold;color:#2563eb}.ok{color:#16a34a}.wait{color:#ea580c}
-.badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#eaf2ff;color:#1d4ed8;font-size:12px;font-weight:bold}
-table{width:100%;border-collapse:collapse;font-size:13px}td,th{border-bottom:1px solid #e5e7eb;padding:8px;text-align:left}
-@media(max-width:600px){.grid,.cars,.actions{grid-template-columns:1fr}.full{grid-column:auto}header h1{font-size:25px}}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE WAY EXPRESS</title>
 </head>
-<body>
-<header>
-<h1>🚕 ONE WAY EXPRESS</h1>
-<p>OUTSTATION DROP TAXI</p>
-<div>Tamil Nadu • Bangalore • Pondicherry</div>
-</header>
-<div class="wrap">
-<div class="tabs">
-<button class="active" onclick="tab('customer',this)">👤 Customer App</button>
-<button onclick="tab('driver',this)">🚗 Driver App</button>
-<button onclick="tab('admin',this)">🛠️ Admin</button>
-</div>
-
-<section id="customer" class="panel active">
-<div class="card">
-<h2>📍 Book One-Way Drop</h2>
-<div class="grid">
-<div><label>Customer Name</label><input id="cname" placeholder="Name"></div>
-<div><label>Mobile</label><input id="cphone" type="tel" placeholder="10 digit mobile"></div>
-<div><label>From</label><input id="from" placeholder="Pickup location"></div>
-<div><label>To</label><input id="to" placeholder="Drop location"></div>
-<div><label>Date</label><input id="date" type="date"></div>
-<div><label>Time</label><input id="time" type="time"></div>
-</div>
-<h3>🚘 Select Vehicle</h3>
-<div class="cars">
-<div class="car selected" data-rate="14" onclick="car(this)">🚘 Sedan<br><b>₹14/km</b></div>
-<div class="car" data-rate="19" onclick="car(this)">🚙 XUV<br><b>₹19/km</b></div>
-<div class="car" data-rate="21" onclick="car(this)">🚐 Innova<br><b>₹21/km</b></div>
-</div>
-<div class="grid" style="margin-top:12px">
-<div><label>Distance KM</label><input id="km" type="number" value="100" min="1" oninput="fare()"></div>
-<div><label>Carrier</label><select id="carrier" onchange="fare()"><option value="0">No Carrier</option><option value="300">Carrier + ₹300</option></select></div>
-</div>
-<div class="info">
-<div>Distance Fare: <b id="df">₹1,400</b></div><div>Driver Bata: <b>₹400</b></div><div>Carrier: <b id="cf">₹0</b></div>
-<div class="fare">Estimated Total: <span id="total">₹1,800</span></div>
-<div>Advance 15%: <b id="adv">₹270</b> | Balance: <b id="bal">₹1,530</b></div>
-</div>
-<div class="actions">
-<button class="btn green" onclick="book()">📲 Submit Booking</button>
-<button class="btn blue" onclick="maps()">🗺️ Google Maps</button>
-</div>
-<div class="info"><b>📢 Direct Booking Alerts</b><br>
-Every booking gets a unique <b>Booking ID</b>, opens a WhatsApp notification, and prepares an email alert to <b>omnamachivayaemrtransport@gmail.com</b>.
-</div>
-<p class="small">Booking status: NEW → ADMIN APPROVED → ASSIGNED → ON TRIP → COMPLETED.</p>
-</div>
-</section>
-
-<section id="driver" class="panel">
-<div class="card">
-<h2>🚗 Driver App</h2>
-<div class="grid">
-<div><label>Driver Name</label><input id="dname" placeholder="Driver name"></div>
-<div><label>Mobile</label><input id="dphone" type="tel" placeholder="Mobile"></div>
-<div><label>Vehicle No</label><input id="vehicle" placeholder="TN XX XX XXXX"></div>
-<div><label>Vehicle Type</label><select id="dtype"><option>Sedan</option><option>XUV</option><option>Innova</option></select></div>
-</div>
-<button class="btn green" onclick="online()">🟢 Go Online</button>
-<div id="ds" class="info">Offline</div>
-<h3>📋 Driver Jobs</h3><div id="driverJobs"></div>
-</div>
-</section>
-
-<section id="admin" class="panel">
-<div class="card">
-<h2>🛠️ Admin Dashboard</h2>
-<div class="info"><b>Admin Approval Required</b><br>Customer booking will NOT be visible as an approved trip to the driver until Admin approves it.</div>
-<div class="actions">
-<button class="btn blue" onclick="adminRefresh()">🔄 Refresh</button>
-<button class="btn dark" onclick="clearDemo()">🧹 Clear Demo Data</button>
-</div>
-<div id="adminJobs"></div>
-</div>
-</section>
-</div>
-
-<script>
-let RATE=14;
-const $=x=>document.getElementById(x);
-const get=()=>JSON.parse(localStorage.getItem('owe_bookings_v2')||'[]');
-const save=x=>localStorage.setItem('owe_bookings_v2',JSON.stringify(x));
-const money=n=>'₹'+Math.round(n).toLocaleString('en-IN');
-
-function tab(id,b){document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');if(id==='admin')adminRefresh();if(id==='driver')driverRefresh()}
-function car(x){document.querySelectorAll('.car').forEach(y=>y.classList.remove('selected'));x.classList.add('selected');RATE=+x.dataset.rate;fare()}
-function fare(){let km=+$('km').value||0,c=+$('carrier').value||0,t=km*RATE+400+c,a=t*.15;$('df').textContent=money(km*RATE);$('cf').textContent=money(c);$('total').textContent=money(t);$('adv').textContent=money(a);$('bal').textContent=money(t-a)}
-function maps(){let f=$('from').value,t=$('to').value;if(!f||!t)return alert('Enter From and To');window.open('https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(f)+'&destination='+encodeURIComponent(t),'_blank')}
-
-function book(){
-let n=$('cname').value.trim(),p=$('cphone').value.trim(),f=$('from').value.trim(),t=$('to').value.trim();
-if(!n||!p||!f||!t)return alert('Please fill Name, Mobile, From and To.');
-let km=+$('km').value||0,c=+$('carrier').value||0,total=km*RATE+400+c;
-let selected=document.querySelector('.car.selected').innerText.split('\n')[0].trim();
-let id='OWE'+Date.now().toString().slice(-8);
-let b={id,name:n,phone:p,from:f,to:t,date:$('date').value,time:$('time').value,car:selected,km,total,status:'NEW',driver:''};
-let a=get();a.unshift(b);save(a);
-
-let text=`ONE WAY EXPRESS BOOKING
-Booking ID: ${id}
-Customer: ${n}
-Mobile: ${p}
-From: ${f}
-To: ${t}
-Date: ${b.date}
-Time: ${b.time}
-Vehicle: ${selected}
-Distance: ${km} KM
-Carrier: ${c?'Yes (+₹300)':'No'}
-Estimated Total: ${money(total)}
-Status: NEW - WAITING FOR ADMIN APPROVAL`;
-
-let wa='https://wa.me/918838313772?text='+encodeURIComponent(text);
-let subject='ONE WAY EXPRESS - New Booking '+id;
-let mail='mailto:omnamachivayaemrtransport@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(text);
-
-window.open(wa,'_blank');
-setTimeout(()=>window.location.href=mail,400);
-
-alert('Booking Created Successfully!\n\nBooking ID: '+id+
-'\n\nWhatsApp message prepared.\nEmail alert draft prepared.\n\nStatus: NEW - Waiting for Admin Approval.');
-
-adminRefresh();
-}
-function online(){
-let d={name:$('dname').value.trim(),phone:$('dphone').value.trim(),vehicle:$('vehicle').value.trim(),type:$('dtype').value,online:true};
-if(!d.name||!d.phone||!d.vehicle)return alert('Fill all driver details');
-localStorage.setItem('owe_driver_v2',JSON.stringify(d));$('ds').innerHTML='🟢 <b>ONLINE</b> — '+d.name+' | '+d.vehicle;driverRefresh();
-}
-function driverRefresh(){
-let d=JSON.parse(localStorage.getItem('owe_driver_v2')||'null');if(d){$('dname').value=d.name;$('dphone').value=d.phone;$('vehicle').value=d.vehicle;$('dtype').value=d.type;$('ds').innerHTML='🟢 <b>ONLINE</b> — '+d.name+' | '+d.vehicle}
-let jobs=get().filter(b=>['ADMIN APPROVED','ASSIGNED','ACCEPTED','ON TRIP'].includes(b.status));
-$('driverJobs').innerHTML=jobs.length?jobs.map(b=>`<div class="job"><b>${b.id}</b> <span class="badge">${b.status}</span><br>📍 ${b.from} → ${b.to}<br>📅 ${b.date} ${b.time}<br>🚘 ${b.car} | ${b.km} KM | ${money(b.total)}<br>👤 Driver: ${b.driver||'Unassigned'}<button class="btn green" onclick="accept('${b.id}')">✅ Accept / Start Trip</button><button class="btn orange" onclick="tripDone('${b.id}')">✔️ Complete Trip</button></div>`).join(''):'<p>No ADMIN APPROVED trips available.</p>';
-}
-function accept(id){let d=JSON.parse(localStorage.getItem('owe_driver_v2')||'null');if(!d)return alert('Go Online first');let a=get(),b=a.find(x=>x.id===id);if(!b||!['ADMIN APPROVED','ASSIGNED'].includes(b.status))return;b.status='ON TRIP';b.driver=d.name;save(a);driverRefresh();adminRefresh()}
-function tripDone(id){let a=get(),b=a.find(x=>x.id===id);if(b){b.status='COMPLETED';save(a)}driverRefresh();adminRefresh()}
-
-function adminRefresh(){
-let a=get();$('adminJobs').innerHTML=a.length?a.map(b=>{
-let actions='';
-if(b.status==='NEW')actions=`<button class="btn green" onclick="approve('${b.id}')">✅ ADMIN APPROVE</button>`;
-if(b.status==='ADMIN APPROVED')actions=`<button class="btn blue" onclick="assign('${b.id}')">🚗 ASSIGN DRIVER</button>`;
-if(b.status==='ASSIGNED')actions=`<button class="btn orange" onclick="notifyDriver('${b.id}')">📲 Notify Driver</button>`;
-if(b.status==='COMPLETED')actions='<span class="ok">✔ Completed</span>';
-return `<div class="job"><b>${b.id}</b> <span class="badge">${b.status}</span><br>👤 ${b.name} — ${b.phone}<br>📍 ${b.from} → ${b.to}<br>📅 ${b.date} ${b.time}<br>🚘 ${b.car} | ${b.km} KM | ${money(b.total)}<br>🚗 Driver: ${b.driver||'Not assigned'}<br>${actions}</div>`}).join(''):'<p>No bookings.</p>';
-}
-function approve(id){let a=get(),b=a.find(x=>x.id===id);if(b){b.status='ADMIN APPROVED';save(a)}adminRefresh();driverRefresh()}
-function assign(id){
-let d=JSON.parse(localStorage.getItem('owe_driver_v2')||'null');if(!d)return alert('Driver must Go Online first.');
-let a=get(),b=a.find(x=>x.id===id);if(b){b.driver=d.name;b.status='ASSIGNED';save(a);notifyDriver(id)}adminRefresh();driverRefresh();
-}
-function notifyDriver(id){let a=get(),b=a.find(x=>x.id===id),d=JSON.parse(localStorage.getItem('owe_driver_v2')||'null');if(!b||!d)return;let msg=`ONE WAY EXPRESS - ADMIN APPROVED TRIP%0AID ${b.id}%0AFrom ${b.from}%0ATo ${b.to}%0ADate ${b.date}%0ATime ${b.time}%0ACar ${b.car}`;window.open('https://wa.me/'+d.phone.replace(/\\D/g,'')+'?text='+msg,'_blank')}
-function clearDemo(){if(confirm('Clear all demo bookings?')){localStorage.removeItem('owe_bookings_v2');adminRefresh();driverRefresh()}}
-let now=new Date();$('date').value=now.toISOString().slice(0,10);$('time').value=now.toTimeString().slice(0,5);fare();
-</script>
+<body style="background:#0f172a;color:white;text-align:center;padding:40px;font-family:Arial">
+<h1 style="color:#facc15;font-size:35px">🚕 ONE WAY EXPRESS</h1>
+<h2>Tamil Nadu No.1 Taxi</h2>
+<br>
+<p style="font-size:20px">✅ Website LIVE ஆயிடுச்சு அண்ணா!</p>
+<br>
+<a href="https://wa.me/919444444444" style="background:#25D366;color:white;padding:18px 30px;border-radius:12px;text-decoration:none;font-size:22px;font-weight:bold">💬 WhatsApp Booking</a>
+<br><br><br>
+<a href="tel:+919444444444" style="background:#2563eb;color:white;padding:15px 30px;border-radius:12px;text-decoration:none">📞 Call 94444 44444</a>
+<br><br>
+<p>Coimbatore | Chennai | Bangalore | Madurai</p>
 </body>
 </html>
