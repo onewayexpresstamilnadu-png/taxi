@@ -3,1264 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Vetttri One Way Travels | One Way Taxi Across South India</title>
-
-<meta name="description"
-content="Vetttri One Way Travels - One Way, Outstation and Airport Drop Taxi across Tamil Nadu, Kerala and Karnataka.">
-
+<title>Vettri Travels | One Way Taxi Across South India</title>
+<meta name="description" content="Vettri Travels - One Way, Round Trip, Airport and Outstation Taxi booking across South India.">
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#fff;
-  color:#171717;
-  line-height:1.5;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.topbar{
-  background:#111;
-  color:#fff;
-  padding:10px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:14px;
-}
-
-.topbar span{
-  margin-right:18px;
-}
-
-.phone{
-  color:#ff7a00;
-  font-weight:bold;
-}
-
-.nav{
-  background:#fff;
-  padding:15px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #eee;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.logo{
-  font-size:25px;
-  font-weight:800;
-}
-
-.logo span{
-  color:#ff6900;
-}
-
-.navlinks{
-  display:flex;
-  gap:25px;
-  font-weight:600;
-}
-
-.navlinks a:hover{
-  color:#ff6900;
-}
-
-.callbtn{
-  background:#ff6900;
-  color:white;
-  padding:10px 18px;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-.hero{
-  background:
-  linear-gradient(90deg,rgba(255,255,255,.98),rgba(255,255,255,.75)),
-  url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80");
-  background-size:cover;
-  background-position:center;
-  padding:70px 5%;
-}
-
-.hero-container{
-  max-width:1200px;
-  margin:auto;
-}
-
-.badge{
-  display:inline-block;
-  background:#fff1e7;
-  color:#e65d00;
-  padding:8px 14px;
-  border-radius:20px;
-  font-weight:bold;
-  margin-bottom:18px;
-}
-
-.hero h1{
-  font-size:52px;
-  line-height:1.08;
-  max-width:700px;
-  margin-bottom:22px;
-}
-
-.hero h1 span{
-  color:#ff6900;
-}
-
-.hero p{
-  max-width:680px;
-  font-size:20px;
-  color:#555;
-  margin-bottom:25px;
-}
-
-.points{
-  display:grid;
-  grid-template-columns:repeat(2,auto);
-  gap:12px 30px;
-  max-width:600px;
-  margin-bottom:30px;
-}
-
-.points div{
-  font-weight:bold;
-  font-size:17px;
-}
-
-.points div::before{
-  content:"✓";
-  color:#ff6900;
-  margin-right:8px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:14px 22px;
-  border-radius:8px;
-  font-weight:bold;
-  display:inline-block;
-}
-
-.btn-orange{
-  background:#ff6900;
-  color:#fff;
-}
-
-.btn-dark{
-  background:#111;
-  color:#fff;
-}
-
-.booking{
-  margin-top:-40px;
-  position:relative;
-  z-index:10;
-  padding:0 5%;
-}
-
-.booking-card{
-  max-width:1100px;
-  margin:auto;
-  background:#fff;
-  border-radius:18px;
-  box-shadow:0 10px 35px rgba(0,0,0,.15);
-  padding:28px;
-  border-top:5px solid #ff6900;
-}
-
-.booking-title{
-  font-size:27px;
-  font-weight:800;
-  margin-bottom:20px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-}
-
-.field label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:6px;
-}
-
-.field input,
-.field select{
-  width:100%;
-  padding:13px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:16px;
-  background:#fff;
-}
-
-.full{
-  grid-column:1/-1;
-}
-
-.swap{
-  margin-top:10px;
-  border:1px solid #ddd;
-  background:#f7f7f7;
-  padding:10px 14px;
-  border-radius:7px;
-  cursor:pointer;
-}
-
-.section{
-  padding:70px 5%;
-}
-
-.container{
-  max-width:1200px;
-  margin:auto;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.section-title h2{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-.section-title p{
-  color:#666;
-}
-
-.services{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.card{
-  border:1px solid #eee;
-  border-radius:14px;
-  padding:25px;
-  background:#fff;
-  box-shadow:0 5px 20px rgba(0,0,0,.05);
-}
-
-.card-icon{
-  font-size:35px;
-  margin-bottom:12px;
-}
-
-.card h3{
-  margin-bottom:8px;
-}
-
-.card p{
-  color:#666;
-}
-
-.dark-section{
-  background:#111;
-  color:#fff;
-}
-
-.fleet{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.car{
-  background:#1d1d1d;
-  border:1px solid #333;
-  padding:20px;
-  border-radius:14px;
-  text-align:center;
-}
-
-.car-icon{
-  font-size:45px;
-}
-
-.car h3{
-  margin:8px 0;
-}
-
-.price{
-  color:#ff7a00;
-  font-size:21px;
-  font-weight:bold;
-}
-
-.destinations{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.destination{
-  min-height:150px;
-  border-radius:14px;
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  color:#fff;
-  font-weight:bold;
-  background:
-  linear-gradient(transparent,rgba(0,0,0,.8)),
-  url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=700&q=80");
-  background-size:cover;
-  background-position:center;
-}
-
-.steps{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.step{
-  text-align:center;
-}
-
-.step-number{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  background:#ff6900;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 15px;
-  font-size:22px;
-  font-weight:bold;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  text-align:center;
-}
-
-.stat{
-  padding:25px;
-}
-
-.stat strong{
-  display:block;
-  font-size:36px;
-  color:#ff6900;
-}
-
-.faq{
-  max-width:900px;
-  margin:auto;
-}
-
-details{
-  border-bottom:1px solid #ddd;
-  padding:18px 0;
-}
-
-summary{
-  cursor:pointer;
-  font-weight:bold;
-  font-size:18px;
-}
-
-.cta{
-  background:#ff6900;
-  color:#fff;
-  text-align:center;
-  padding:65px 5%;
-}
-
-.cta h2{
-  font-size:40px;
-  margin-bottom:15px;
-}
-
-.cta .btn{
-  background:#111;
-  margin-top:20px;
-}
-
-footer{
-  background:#111;
-  color:#ccc;
-  padding:45px 5%;
-}
-
-.footer-grid{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:30px;
-}
-
-footer h3{
-  color:#fff;
-  margin-bottom:15px;
-}
-
-footer a{
-  display:block;
-  margin:7px 0;
-}
-
-.copyright{
-  border-top:1px solid #333;
-  margin-top:30px;
-  padding-top:20px;
-  text-align:center;
-  font-size:14px;
-}
-
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:60px;
-  height:60px;
-  background:#25D366;
-  color:#fff;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
-  z-index:2000;
-  box-shadow:0 5px 15px rgba(0,0,0,.25);
-}
-
-@media(max-width:800px){
-
-  .topbar{
-    display:none;
-  }
-
-  .nav{
-    padding:13px 4%;
-  }
-
-  .navlinks{
-    display:none;
-  }
-
-  .logo{
-    font-size:20px;
-  }
-
-  .hero{
-    padding:45px 5%;
-  }
-
-  .hero h1{
-    font-size:39px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-
-  .points{
-    grid-template-columns:1fr;
-  }
-
-  .booking{
-    margin-top:0;
-    padding:20px 4%;
-  }
-
-  .booking-card{
-    padding:20px;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-
-  .services{
-    grid-template-columns:1fr;
-  }
-
-  .fleet{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .destinations{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .steps{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .stats{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .section{
-    padding:50px 5%;
-  }
-
-  .section-title h2{
-    font-size:30px;
-  }
-
-  .cta h2{
-    font-size:30px;
-  }
-}
-
-@media(max-width:450px){
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .fleet{
-    grid-template-columns:1fr;
-  }
-
-  .destinations{
-    grid-template-columns:1fr;
-  }
-
-  .steps{
-    grid-template-columns:1fr;
-  }
-}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:#10243d;background:#fff;line-height:1.5}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}.top-strip{background:#062a52;color:#fff;font-size:12px}.strip-inner{display:flex;gap:25px;align-items:center;min-height:34px}.strip-inner a{margin-left:auto;color:#2e9bff;font-weight:800}header{background:#fff;border-bottom:1px solid #eceff3;position:sticky;top:0;z-index:30}.nav{height:72px;display:flex;align-items:center;gap:26px}.brand{display:flex;align-items:center;gap:9px;font-size:20px}.brand-mark{width:39px;height:39px;border-radius:10px;background:#087cf5;color:#fff;display:grid;place-items:center;font-weight:900}.brand i{color:#087cf5;font-style:normal}.nav nav{margin-left:auto;display:flex;gap:21px;font-size:13px;font-weight:750}.nav nav a:hover{color:#087cf5}.nav-wa{background:#18a957;color:#fff;padding:10px 15px;border-radius:8px;font-size:12px;font-weight:800}.hamb{display:none;border:0;background:transparent;font-size:24px}.hero{background-image:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.90) 38%,rgba(255,255,255,.15) 70%),url("hero.png");background-size:cover;background-position:center;background-repeat:no-repeat;padding:54px 0 66px}.hero-inner{display:grid;grid-template-columns:1.02fr .98fr;gap:55px;align-items:center}.eyebrow,.section-head small,.terms small,.final-cta small{font-size:11px;letter-spacing:1.6px;font-weight:900;color:#087cf5}.hero h1{font-size:clamp(42px,5.6vw,67px);line-height:1.04;margin:15px 0}.hero h1 span{color:#f47700}.hero-copy>p{font-size:17px;color:#687382;max-width:650px}.benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.benefits>div{display:flex;gap:10px;align-items:center}.benefits b{color:#f47700;font-size:19px}.benefits strong,.benefits small{display:block}.benefits strong{font-size:13px}.benefits small{font-size:11px;color:#7b8592}.booking{background:#fff;border:1px solid #e7ebef;border-radius:17px;padding:23px;box-shadow:0 22px 55px #1b24350e}.booking-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.booking-title small{font-size:10px;color:#087cf5;font-weight:900;letter-spacing:1px}.booking-title h2{font-size:18px;margin:3px 0}.booking-title>span{font-size:35px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}label{font-size:11px;font-weight:800;color:#4f5b6a;margin-bottom:8px;display:block}input{width:100%;padding:11px;border:1px solid #dfe4e9;border-radius:8px;margin-top:5px;font:inherit;outline:0}input:focus{border-color:#5aaeff}.swap{border:0;background:transparent;color:#066edb;font-size:11px;font-weight:800;padding:2px 0 9px;cursor:pointer}.choice-title{font-size:11px;font-weight:900;margin:6px 0}.choice-row{display:flex;gap:7px;margin-bottom:8px}.choice{flex:1;background:#f6f7f8;border:1px solid #e3e7eb;padding:8px;border-radius:7px;font-weight:800;font-size:11px;cursor:pointer}.choice.active{background:#e9f4ff;border-color:#2e9bff;color:#066edb}.choice small{display:block;font-weight:500;margin-top:2px}.car-select{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:12px}.car-mini{border:1px solid #e4e8ec;background:#fff;border-radius:8px;padding:7px 4px;cursor:pointer}.car-mini.active{border:2px solid #087cf5;background:#f2f8ff}.car-mini b,.car-mini strong,.car-mini span{display:block}.car-mini b{font-size:23px}.car-mini strong{font-size:10px;color:#066edb}.car-mini span{font-size:9px;margin-top:2px}.book-submit{width:100%;border:0;background:#087cf5;color:#fff;border-radius:9px;padding:13px;font-weight:900;cursor:pointer}.book-submit b{float:right}.call-line{text-align:center;font-size:10px;color:#858e9b;margin-top:9px}.call-line a{color:#062a52;font-weight:900}.ticker{background:#062a52;color:#fff;overflow:hidden}.ticker-in{display:flex;gap:25px;align-items:center;min-height:42px;font-size:11px;white-space:nowrap}.ticker-in span:nth-child(-n+4){color:#67b5ff;font-weight:800}.section{padding:72px 0}.compact{padding:25px 0}.notice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.notice{display:flex;gap:13px;border:1px solid #e8ebef;border-radius:12px;padding:17px}.notice>span{display:grid;place-items:center;width:38px;height:38px;background:#e8f3ff;border-radius:9px;color:#f47700;font-weight:900}.notice b{font-size:13px}.notice p{margin:2px 0 0;color:#7a8490;font-size:11px}.grey{background:#f5f9ff}.section-head{text-align:center;max-width:780px;margin:0 auto 34px}.section-head h2{font-size:34px;line-height:1.15;margin:7px 0}.section-head p{color:#747e8b;font-size:14px}.destination-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.destination-grid article{background:#fff;border:1px solid #e5e9ee;border-radius:13px;overflow:hidden;padding-bottom:15px}.dest-img{height:130px;display:flex;align-items:flex-end;padding:13px;color:#fff;font-size:20px;font-weight:900;letter-spacing:1px;background-size:cover}.city{background:linear-gradient(135deg,#1d3557,#4f7094)}.business{background:linear-gradient(135deg,#243949,#517fa4)}.hill{background:linear-gradient(135deg,#355c43,#8eb486)}.temple{background:linear-gradient(135deg,#7b3e1d,#e6a35a)}.coast{background:linear-gradient(135deg,#006d77,#83c5be)}.destination-grid h3{font-size:14px;margin:13px 13px 3px}.destination-grid p{font-size:11px;color:#7c8692;margin:0 13px 10px}.destination-grid article>div:not(.dest-img){margin:0 13px}.destination-grid article a{font-size:10px;font-weight:900;color:#066edb;margin-right:13px}.destination-grid article>small{display:block;font-size:9px;color:#8b95a0;margin:11px 13px 0}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service-grid article{border:1px solid #e6eaee;border-radius:13px;padding:22px}.service-grid i{width:40px;height:40px;background:#e8f3ff;color:#087cf5;border-radius:9px;display:grid;place-items:center;font-style:normal;font-size:19px}.service-grid h3{font-size:15px;margin:12px 0 4px}.service-grid p{font-size:12px;color:#77818d;margin:0}.dark{background:#062a52;color:#fff;padding:72px 0}.light h2{color:#fff}.light p{color:#a9c4df}.fleet{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.fleet>div{background:#0d3159;border:1px solid #ffffff10;border-radius:12px;padding:13px}.fleet-art{height:105px;background:#123a67;border-radius:9px;display:grid;place-items:center;font-size:55px}.fleet h3{margin:9px 0 0;font-size:14px}.fleet strong{color:#67b5ff;font-size:12px}.fleet p{color:#9ca7b5;font-size:10px;margin:3px 0}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #e6e9ed;border-radius:14px;padding:23px;margin-bottom:45px}.stats div{text-align:center;border-right:1px solid #e6e9ed}.stats div:last-child{border:0}.stats b,.stats span{display:block}.stats b{font-size:25px}.stats span{font-size:10px;color:#7a8490}.terms{display:grid;grid-template-columns:1fr 1fr;gap:35px}.terms h2{font-size:29px;margin:5px 0}.terms ul{padding-left:18px}.terms li{font-size:12px;color:#6f7a87;margin:8px 0}.steps{background:#eef7ff;padding:70px 0}.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step-grid>div{background:#fff;border:1px solid #cfe7ff;border-radius:12px;padding:20px}.step-grid span{color:#087cf5;font-weight:900;font-size:19px}.step-grid h3{font-size:14px;margin:9px 0 2px}.step-grid p{font-size:11px;color:#7b8591;margin:0}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.why-grid>div{border:1px solid #e6e9ed;border-radius:12px;padding:19px}.why-grid b{font-size:13px}.why-grid p{font-size:11px;color:#7a8490}.faq{max-width:850px}.faq details{background:#fff;border:1px solid #e4e8ed;border-radius:9px;padding:15px 18px;margin:9px 0}.faq summary{font-size:13px;font-weight:850;cursor:pointer}.faq p{font-size:12px;color:#737e8a}.final-cta{background:#087cf5;color:#fff;text-align:center;padding:65px 0}.final-cta h2{font-size:38px;margin:7px 0}.final-cta p{font-size:13px;opacity:.9}.final-cta a{display:inline-block;background:#062a52;color:#fff;padding:12px 18px;border-radius:8px;margin:7px;font-weight:800;font-size:12px}.final-cta a.white{background:#fff;color:#148448}footer{background:#041a33;color:#bdc6d0;padding:50px 0 0}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}.footer-brand{color:#fff}.footer-grid h4{color:#fff;font-size:13px}.footer-grid a,.footer-grid span{display:block;font-size:11px;color:#919dab;margin:8px 0}.footer-grid p{font-size:11px;color:#808b99}.copyright{text-align:center;border-top:1px solid #ffffff10;padding:17px;margin-top:35px;font-size:10px;color:#6e7886}@media(max-width:900px){.nav nav{display:none}.nav nav.show{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;padding:20px;flex-direction:column}.hamb{display:block}.nav-wa{display:none}.hero-inner{grid-template-columns:1fr}.destination-grid{grid-template-columns:repeat(3,1fr)}.fleet{grid-template-columns:repeat(3,1fr)}.why-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.hero{background-position:58% top}.strip-inner{gap:10px;overflow:hidden}.strip-inner span:nth-child(n+3){display:none}.hero{padding-top:35px}.benefits,.field-row,.notice-grid,.destination-grid,.service-grid,.fleet,.terms,.step-grid,.why-grid,.footer-grid{grid-template-columns:1fr}.car-select{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:1fr 1fr;gap:15px}.stats div:nth-child(2){border:0}.hero h1{font-size:43px}.section{padding:55px 0}.section-head h2{font-size:29px}.final-cta h2{font-size:31px}}
+.terms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.terms-grid>div{background:#f7fbff;border:1px solid #d8eaff;border-radius:12px;padding:18px}.terms-grid strong{color:#062a52;font-size:14px}.terms-grid p{font-size:12px;color:#687382;margin:8px 0 0}.terms-note{text-align:center;color:#687382;font-size:12px;margin-top:18px}.terms-note b{color:#087cf5}@media(max-width:900px){.terms-grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.terms-grid{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div>
-    <span>🚕 Vetttri One Way Travels</span>
-    <span>⚡ Instant Booking</span>
-    <span>🕐 24/7 Available</span>
-    <span>₹ Per KM Based</span>
+<div class="top-strip">
+  <div class="wrap strip-inner">
+    <span>◆ Instant Booking</span><span>✓ 24/7 Available</span><span>✓ Per KM Based</span><span>✓ Transparent Pricing</span>
+    <a href="tel:+918838313772">+91 88383 13772</a>
   </div>
-
-  <a class="phone" href="tel:+918838313772">
-    📞 +91 88383 13772
-  </a>
 </div>
 
-<!-- NAV -->
-<nav class="nav">
-
-  <div class="logo">
-    Vetttri <span>One Way Travels</span>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="brand-mark">V</span><strong>Vettri <i>Travels</i></strong></a>
+    <nav>
+      <a href="#home">Home</a><a href="#booking">Book Taxi</a><a href="#cars">Available Cars</a>
+      <a href="#destinations">Routes</a><a href="#services">Services</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-wa" href="https://wa.me/918838313772">WhatsApp</a>
+    <button class="hamb" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
   </div>
+</header>
 
-  <div class="navlinks">
-    <a href="#home">Home</a>
-    <a href="#booking">Booking</a>
-    <a href="#services">Services</a>
-    <a href="#vehicles">Vehicles</a>
-    <a href="#routes">Routes</a>
-    <a href="#faq">FAQ</a>
+<main id="home">
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">ONE WAY & OUTSTATION CAB SERVICE • SOUTH INDIA</div>
+      <h1>Book One Way Taxi<br><span>Across South India</span></h1>
+      <p>Travel across Tamil Nadu, Kerala & Karnataka with clean vehicles, professional drivers and simple booking.</p>
+      <div class="benefits">
+        <div><b>✓</b><span><strong>Fixed Fare</strong><small>Clear pricing</small></span></div>
+        <div><b>✓</b><span><strong>No Hidden Charges</strong><small>Transparent billing</small></span></div>
+        <div><b>✓</b><span><strong>24/7 Support</strong><small>Always available</small></span></div>
+        <div><b>✓</b><span><strong>Verified Drivers</strong><small>Comfortable rides</small></span></div>
+      </div>
+    </div>
+
+    <div class="booking" id="booking">
+      <div class="booking-title"><div><small>QUICK TAXI BOOKING</small><h2>One Way • Outstation • Airport Drop</h2></div><span>🚕</span></div>
+      <form id="bookForm">
+        <div class="field-row">
+          <label>Pickup Address<input id="pickup" placeholder="Enter pickup location" required></label>
+          <label>Drop Address<input id="drop" placeholder="Enter drop location" required></label>
+        </div>
+        <button type="button" class="swap" onclick="swap()">⇅ Swap pickup & drop</button>
+        <div class="field-row">
+          <label>Full Name<input id="name" placeholder="Your name" required></label>
+          <label>Mobile Number<input id="mobile" placeholder="10-digit mobile" required></label>
+        </div>
+        <div class="field-row">
+          <label>Pickup Date<input id="date" type="date" required></label>
+          <label>Pickup Time<input id="time" type="time" required></label>
+        </div>
+        <div class="choice-title">Trip Type</div>
+        <div class="choice-row">
+          <button type="button" class="choice active" onclick="trip(this,'One Way')">One Way <small>Min 150 KM</small></button>
+          <button type="button" class="choice" onclick="trip(this,'Round Trip')">Round Trip <small>Min 300 KM/Day</small></button>
+        </div>
+        <div class="choice-title">AC / Non-AC</div>
+        <div class="choice-row ac"><button type="button" class="choice active" onclick="ac(this,'AC')">AC</button><button type="button" class="choice" onclick="ac(this,'Non-AC')">Non-AC</button></div>
+        <div class="choice-title">Select Vehicle</div>
+        <div class="car-select" id="carSelect">
+          <button type="button" class="car-mini active" data-car="Mini"><b>🚗</b><strong>₹15/km</strong><span>Mini</span></button>
+          <button type="button" class="car-mini" data-car="Sedan"><b>🚘</b><strong>₹16/km</strong><span>Sedan</span></button>
+          <button type="button" class="car-mini" data-car="Ertiga"><b>🚙</b><strong>₹21/km</strong><span>Ertiga</span></button>
+          <button type="button" class="car-mini" data-car="Innova"><b>🚙</b><strong>₹22/km</strong><span>Innova</span></button>
+          <button type="button" class="car-mini" data-car="Crysta"><b>🚙</b><strong>₹25/km</strong><span>Innova Crysta</span></button>
+          <button type="button" class="car-mini" data-car="HyCross"><b>🚙</b><strong>₹26/km</strong><span>HyCross</span></button>
+          <button type="button" class="car-mini" data-car="Tempo"><b>🚐</b><strong>₹30/km</strong><span>Tempo</span></button>
+        </div>
+        <button class="book-submit" type="submit">Send Booking via WhatsApp <b>→</b></button>
+        <div class="call-line">or call directly <a href="tel:+918838313772">+91 88383 13772</a></div>
+      </form>
+    </div>
   </div>
-
-  <a class="callbtn" href="tel:+918838313772">
-    Call Now
-  </a>
-
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-<div class="hero-container">
-
-  <div class="badge">
-    One Way & Outstation Cab Service • South India
-  </div>
-
-  <h1>
-    Book One Way Taxi
-    <span>Across South India</span>
-  </h1>
-
-  <p>
-    Travel across Tamil Nadu, Kerala & Karnataka with
-    clean vehicles, professional drivers and simple booking.
-  </p>
-
-  <div class="points">
-
-    <div>Fixed Fare — Clear Pricing</div>
-    <div>No Hidden Charges — Transparent Billing</div>
-    <div>24/7 Support — Always Available</div>
-    <div>Verified Drivers — Comfortable Rides</div>
-
-  </div>
-
-  <div class="hero-buttons">
-
-    <a href="#booking" class="btn btn-orange">
-      🚕 Book Taxi
-    </a>
-
-    <a href="https://wa.me/918838313772"
-       class="btn btn-dark">
-      WhatsApp Us
-    </a>
-
-  </div>
-
-</div>
-
 </section>
 
-<!-- BOOKING -->
-<section class="booking" id="booking">
+<section class="ticker"><div class="wrap ticker-in"><span>✓ No Hidden Charges</span><span>✓ Verified Drivers</span><span>✓ Instant Confirmation</span><span>✓ Pay Driver Directly</span><span>Chennai</span><span>Coimbatore</span><span>Madurai</span><span>Bangalore</span><span>Ooty</span><span>Kodaikanal</span><span>Kochi</span></div></section>
 
-<div class="booking-card">
-
-<div class="booking-title">
-  🚕 Quick Taxi Booking
+<section class="section compact">
+<div class="wrap">
+  <div class="notice-grid">
+    <div class="notice"><span>₹</span><div><b>Transparent Billing</b><p>Toll charges as per actual. No hidden fees.</p></div></div>
+    <div class="notice"><span>24</span><div><b>Round-the-Clock Support</b><p>Call or WhatsApp anytime for booking.</p></div></div>
+    <div class="notice"><span>✓</span><div><b>Doorstep Pickup</b><p>Convenient pickup based on your route.</p></div></div>
+  </div>
 </div>
-
-<form id="bookingForm">
-
-<div class="form-grid">
-
-<div class="field">
-<label>Pickup Address</label>
-<input id="pickup" type="text"
-placeholder="Enter pickup location" required>
-</div>
-
-<div class="field">
-<label>Drop Address</label>
-<input id="drop" type="text"
-placeholder="Enter drop location" required>
-</div>
-
-<div class="full">
-<button type="button" class="swap"
-onclick="swapLocations()">
-⇅ Swap Pickup & Drop
-</button>
-</div>
-
-<div class="field">
-<label>Full Name</label>
-<input id="name" type="text"
-placeholder="Your name" required>
-</div>
-
-<div class="field">
-<label>Mobile Number</label>
-<input id="mobile" type="tel"
-placeholder="10-digit mobile" required>
-</div>
-
-<div class="field">
-<label>Pickup Date</label>
-<input id="date" type="date" required>
-</div>
-
-<div class="field">
-<label>Pickup Time</label>
-<input id="time" type="time" required>
-</div>
-
-<div class="field">
-<label>Trip Type</label>
-<select id="trip">
-<option>One Way - Min 150 KM</option>
-<option>Round Trip - Min 300 KM/Day</option>
-</select>
-</div>
-
-<div class="field">
-<label>AC / Non-AC</label>
-<select id="ac">
-<option>AC</option>
-<option>Non-AC</option>
-</select>
-</div>
-
-<div class="field">
-<label>Select Vehicle</label>
-
-<select id="vehicle">
-
-<option>Mini - ₹15/km</option>
-<option>Sedan - ₹16/km</option>
-<option>Ertiga - ₹21/km</option>
-<option>Innova - ₹22/km</option>
-<option>Innova Crysta - ₹25/km</option>
-<option>Innova HyCross - ₹26/km</option>
-<option>Tempo Traveller - ₹30/km</option>
-
-</select>
-
-</div>
-
-<div class="full">
-
-<button type="submit"
-class="btn btn-orange"
-style="border:0;cursor:pointer;width:100%;font-size:17px;">
-📱 Send Booking via WhatsApp
-</button>
-
-</div>
-
-</div>
-
-</form>
-
-<p style="margin-top:15px;text-align:center;">
-Or call directly:
-<a href="tel:+918838313772"
-style="color:#ff6900;font-weight:bold;">
-+91 88383 13772
-</a>
-</p>
-
-</div>
-
 </section>
 
-<!-- SERVICES -->
+<section class="section grey" id="destinations">
+<div class="wrap">
+  <div class="section-head"><small>ONE WAY DESTINATIONS</small><h2>One Way Taxi Destinations Across South India</h2><p>One way and outstation taxi services with easy booking.</p></div>
+  <div class="destination-grid">
+    <article><div class="dest-img city">CHENNAI</div><h3>Chennai One Way Taxi</h3><p>Airport & city travel</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img business">BENGALURU</div><h3>Bangalore One Way Taxi</h3><p>Interstate business trips</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img hill">OOTY</div><h3>Ooty One Way Taxi</h3><p>Hill station rides</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img temple">MADURAI</div><h3>Madurai One Way Taxi</h3><p>Temple & family trips</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img coast">PONDICHERRY</div><h3>Pondicherry One Way Taxi</h3><p>Beach & leisure trips</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img hill">KODAIKANAL</div><h3>Kodaikanal One Way Taxi</h3><p>Scenic mountain travel</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img temple">RAMESWARAM</div><h3>Rameswaram One Way Taxi</h3><p>Pilgrimage travel</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img city">COIMBATORE</div><h3>Coimbatore One Way Taxi</h3><p>Industrial & city travel</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img coast">KANYAKUMARI</div><h3>Kanyakumari One Way Taxi</h3><p>Coastal long drives</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img hill">MUNNAR</div><h3>Munnar One Way Taxi</h3><p>Nature & tea estates</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img city">TRICHY</div><h3>Trichy One Way Taxi</h3><p>Temple & city trips</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+    <article><div class="dest-img temple">TIRUPATI</div><h3>Tirupati One Way Taxi</h3><p>Spiritual journeys</p><div><a href="tel:+918838313772">Call Now</a><a href="https://wa.me/918838313772">Get Fare</a></div><small>Fixed fare • No return charge • 24/7 support</small></article>
+  </div>
+</div>
+</section>
+
 <section class="section" id="services">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Our Taxi Services</h2>
-<p>Simple, reliable and comfortable travel.</p>
+<div class="wrap">
+<div class="section-head"><small>OUR SERVICES</small><h2>Complete Taxi Solutions</h2><p>From quick city drops to multi-day outstation trips.</p></div>
+<div class="service-grid">
+  <article><i>↗</i><h3>One Way Drop Taxi</h3><p>Pay only for one-way distance. Ideal for intercity drops.</p></article>
+  <article><i>↔</i><h3>Round Trip Taxi</h3><p>Flexible return schedule for family and multi-day trips.</p></article>
+  <article><i>✈</i><h3>Airport Transfer</h3><p>Reliable airport pickup and drop with scheduled travel.</p></article>
+  <article><i>⌁</i><h3>Outstation Cab</h3><p>Long-distance travel across South India.</p></article>
+  <article><i>▣</i><h3>Corporate Travel</h3><p>Regular employee transport and client pickups.</p></article>
+  <article><i>⌂</i><h3>Hill Station Trips</h3><p>Experienced hill-road travel for Ooty, Kodaikanal and Munnar.</p></article>
 </div>
-
-<div class="services">
-
-<div class="card">
-<div class="card-icon">🚕</div>
-<h3>One Way Drop Taxi</h3>
-<p>
-Affordable one-way taxi service between major cities
-and destinations across South India.
-</p>
 </div>
-
-<div class="card">
-<div class="card-icon">🔄</div>
-<h3>Round Trip Taxi</h3>
-<p>
-Comfortable round-trip travel with flexible pickup
-and return options.
-</p>
-</div>
-
-<div class="card">
-<div class="card-icon">✈️</div>
-<h3>Airport Transfer</h3>
-<p>
-Airport pickup and drop service available 24/7.
-</p>
-</div>
-
-<div class="card">
-<div class="card-icon">🛣️</div>
-<h3>Outstation Cab</h3>
-<p>
-Long-distance taxi service for family and personal travel.
-</p>
-</div>
-
-<div class="card">
-<div class="card-icon">🏢</div>
-<h3>Corporate Travel</h3>
-<p>
-Reliable transportation for business and corporate trips.
-</p>
-</div>
-
-<div class="card">
-<div class="card-icon">⛰️</div>
-<h3>Hill Station Trips</h3>
-<p>
-Travel comfortably to Ooty, Kodaikanal, Munnar and more.
-</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- VEHICLES -->
-<section class="section dark-section" id="vehicles">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Our Vehicles</h2>
-<p>Choose the vehicle suitable for your journey.</p>
+<section class="dark">
+<div class="wrap">
+<div class="section-head light"><small>OUR FLEET</small><h2>Available Cars</h2><p>Choose a vehicle that suits your journey.</p></div>
+<div class="fleet" id="cars">
+  <div><div class="fleet-art">🚗</div><h3>Mini</h3><strong>₹15/km</strong><p>1–3 passengers</p></div>
+  <div><div class="fleet-art">🚘</div><h3>Sedan</h3><strong>₹16/km</strong><p>1–4 passengers</p></div>
+  <div><div class="fleet-art">🚙</div><h3>Ertiga</h3><strong>₹21/km</strong><p>1–6 passengers</p></div>
+  <div><div class="fleet-art">🚙</div><h3>Innova</h3><strong>₹22/km</strong><p>1–7 passengers</p></div>
+  <div><div class="fleet-art">🚙</div><h3>Innova Crysta</h3><strong>₹25/km</strong><p>Premium comfort</p></div>
+  <div><div class="fleet-art">🚙</div><h3>Innova HyCross</h3><strong>₹26/km</strong><p>Premium travel</p></div>
+  <div><div class="fleet-art">🚐</div><h3>Tempo Traveller</h3><strong>₹30/km</strong><p>8–17 passengers</p></div>
 </div>
-
-<div class="fleet">
-
-<div class="car">
-<div class="car-icon">🚗</div>
-<h3>Mini</h3>
-<div class="price">₹15/km</div>
 </div>
-
-<div class="car">
-<div class="car-icon">🚘</div>
-<h3>Sedan</h3>
-<div class="price">₹16/km</div>
-</div>
-
-<div class="car">
-<div class="car-icon">🚙</div>
-<h3>Ertiga</h3>
-<div class="price">₹21/km</div>
-</div>
-
-<div class="car">
-<div class="car-icon">🚙</div>
-<h3>Innova</h3>
-<div class="price">₹22/km</div>
-</div>
-
-<div class="car">
-<div class="car-icon">🚙</div>
-<h3>Innova Crysta</h3>
-<div class="price">₹25/km</div>
-</div>
-
-<div class="car">
-<div class="car-icon">🚙</div>
-<h3>Innova HyCross</h3>
-<div class="price">₹26/km</div>
-</div>
-
-<div class="car">
-<div class="car-icon">🚐</div>
-<h3>Tempo Traveller</h3>
-<div class="price">₹30/km</div>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- DESTINATIONS -->
-<section class="section" id="routes">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Popular One Way Routes</h2>
-<p>Book your taxi to popular destinations.</p>
-</div>
-
-<div class="destinations">
-
-<div class="destination">Chennai → Coimbatore</div>
-<div class="destination">Chennai → Madurai</div>
-<div class="destination">Chennai → Bangalore</div>
-<div class="destination">Chennai → Pondicherry</div>
-<div class="destination">Chennai → Tirupati</div>
-<div class="destination">Coimbatore → Ooty</div>
-<div class="destination">Madurai → Rameswaram</div>
-<div class="destination">Madurai → Kanyakumari</div>
-<div class="destination">Coimbatore → Munnar</div>
-<div class="destination">Chennai → Salem</div>
-<div class="destination">Trichy → Thanjavur</div>
-<div class="destination">Chennai → Tirunelveli</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- STATS -->
-<section class="section dark-section">
-
-<div class="container">
-
-<div class="stats">
-
-<div class="stat">
-<strong>24/7</strong>
-Support
-</div>
-
-<div class="stat">
-<strong>150+</strong>
-KM One Way
-</div>
-
-<div class="stat">
-<strong>100%</strong>
-Transparent
-</div>
-
-<div class="stat">
-<strong>7</strong>
-Vehicle Options
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- HOW IT WORKS -->
 <section class="section">
-
-<div class="container">
-
-<div class="section-title">
-<h2>How It Works</h2>
-<p>Book your taxi in four simple steps.</p>
+<div class="wrap">
+<div class="stats"><div><b>10,000+</b><span>Happy Trips</span></div><div><b>50+</b><span>Cities Covered</span></div><div><b>4.9★</b><span>Average Rating</span></div><div><b>24/7</b><span>Booking Support</span></div></div>
+<div class="terms">
+<div><small>IMPORTANT INFORMATION</small><h2>Travel Terms</h2><ul><li>Toll, parking and permit charges are billed as applicable.</li><li>Route or distance changes may affect the final fare.</li><li>Vehicle is provided based on availability and trip type.</li><li>Night travel and hill-station charges may apply where required.</li></ul></div>
+<div><small>ONE WAY & ROUND TRIP</small><h2>Simple Booking Rules</h2><ul><li>One-way booking can be used for city-to-city drop trips.</li><li>Round trips are suitable for multi-day journeys.</li><li>Extra kilometres or waiting may be charged as applicable.</li><li>Final fare is confirmed before the trip.</li></ul></div>
 </div>
-
-<div class="steps">
-
-<div class="step">
-<div class="step-number">1</div>
-<h3>Enter Route</h3>
-<p>Enter pickup and drop location.</p>
 </div>
-
-<div class="step">
-<div class="step-number">2</div>
-<h3>Confirm Fare</h3>
-<p>Choose your vehicle and trip type.</p>
-</div>
-
-<div class="step">
-<div class="step-number">3</div>
-<h3>Choose Time</h3>
-<p>Select your pickup date and time.</p>
-</div>
-
-<div class="step">
-<div class="step-number">4</div>
-<h3>Driver Assigned</h3>
-<p>Our team confirms your booking.</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- WHY US -->
-<section class="section" style="background:#f7f7f7">
+<section class="steps"><div class="wrap"><div class="section-head"><small>HOW IT WORKS</small><h2>Booked In 4 Easy Steps</h2></div><div class="step-grid">
+<div><span>1</span><h3>Enter Route</h3><p>Enter pickup and drop city.</p></div><div><span>2</span><h3>Confirm Fare</h3><p>Get clear fare details.</p></div><div><span>3</span><h3>Choose Time</h3><p>Schedule your ride.</p></div><div><span>4</span><h3>Driver Assigned</h3><p>Driver details are shared.</p></div>
+</div></div></section>
 
-<div class="container">
+<section class="section">
+<div class="wrap">
+<div class="section-head"><small>WHY CHOOSE US</small><h2>Travel Worry-Free</h2></div>
+<div class="why-grid"><div><b>✓ Well Maintained Cars</b><p>Clean mini, sedan, SUV and traveller options.</p></div><div><b>✓ Flexible Pickup</b><p>Schedule your ride at a convenient time.</p></div><div><b>✓ Verified Drivers</b><p>Experienced drivers for comfortable travel.</p></div><div><b>✓ Wide Route Coverage</b><p>Major cities and destinations across South India.</p></div><div><b>✓ Transparent Pricing</b><p>Clear per-km pricing and booking communication.</p></div><div><b>✓ 24/7 Booking Support</b><p>Call or WhatsApp round the clock.</p></div></div>
+</div></section>
 
-<div class="section-title">
-<h2>Why Choose Vetttri Travels?</h2>
+<section class="section grey" id="faq">
+<div class="wrap faq"><div class="section-head"><small>FAQ</small><h2>Good To Know</h2></div>
+<details open><summary>How does the booking work?</summary><p>Fill the booking form and your trip details open in WhatsApp. The booking team can confirm fare, vehicle and pickup time.</p></details>
+<details><summary>Do you provide one-way taxi service?</summary><p>Yes. Select One Way and enter your pickup and drop locations.</p></details>
+<details><summary>Can I book an early morning or late-night trip?</summary><p>Yes, subject to vehicle and driver availability.</p></details>
+<details><summary>Which areas do you cover?</summary><p>Major cities and destinations across Tamil Nadu, Kerala, Karnataka and Puducherry.</p></details>
 </div>
-
-<div class="services">
-
-<div class="card">
-<h3>🚗 Well Maintained Cars</h3>
-<p>Clean and comfortable vehicles.</p>
-</div>
-
-<div class="card">
-<h3>📍 Flexible Pickup</h3>
-<p>Pickup from your preferred location.</p>
-</div>
-
-<div class="card">
-<h3>👨‍✈️ Verified Drivers</h3>
-<p>Professional and responsible drivers.</p>
-</div>
-
-<div class="card">
-<h3>🗺️ Wide Route Coverage</h3>
-<p>Routes across South India.</p>
-</div>
-
-<div class="card">
-<h3>💰 Transparent Pricing</h3>
-<p>No unnecessary hidden charges.</p>
-</div>
-
-<div class="card">
-<h3>📞 24/7 Booking Support</h3>
-<p>Call us anytime for booking assistance.</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- FAQ -->
-<section class="section" id="faq">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Frequently Asked Questions</h2>
+<section class="section terms-box">
+<div class="wrap">
+<div class="section-head"><small>IMPORTANT CONDITIONS</small><h2>Trip Terms & Extra Charges</h2></div>
+<div class="terms-grid">
+<div><strong>🚧 Toll Charges</strong><p>Toll charges are extra and payable by the customer as per actuals.</p></div>
+<div><strong>🛂 Permit Charges</strong><p>Inter-state permit / entry charges are extra wherever applicable.</p></div>
+<div><strong>🅿️ Parking Charges</strong><p>Airport, railway station and other parking charges are extra as per actuals.</p></div>
+<div><strong>👨‍✈️ Driver Betta</strong><p>Driver allowance (Betta) is <b>₹400 per day</b>.</p></div>
 </div>
-
-<div class="faq">
-
-<details>
-<summary>What is the minimum distance for One Way?</summary>
-<p>
-One Way booking starts from a minimum of 150 KM.
-</p>
-</details>
-
-<details>
-<summary>Do you provide airport pickup and drop?</summary>
-<p>
-Yes. Airport pickup and drop services are available.
-</p>
-</details>
-
-<details>
-<summary>How can I book a taxi?</summary>
-<p>
-Fill the booking form and send the details through WhatsApp,
-or call +91 88383 13772.
-</p>
-</details>
-
-<details>
-<summary>Which areas do you cover?</summary>
-<p>
-We provide taxi services across Tamil Nadu, Kerala,
-Karnataka and other South Indian routes.
-</p>
-</details>
-
-<details>
-<summary>Is booking available 24/7?</summary>
-<p>
-Yes. Booking enquiries are accepted 24/7.
-</p>
-</details>
-
+<p class="terms-note">The above extra charges are not included in the base fare unless specifically mentioned in the booking confirmation.</p>
 </div>
-
-</div>
-
 </section>
 
-<!-- CTA -->
-<section class="cta">
+<section class="final-cta"><div class="wrap"><small>24/7 BOOKING SUPPORT</small><h2>Bags Packed? Let's Hit The Road!</h2><p>Book now on WhatsApp or call us. Share your route and travel details.</p><a href="#booking">Book Taxi Now →</a><a class="white" href="https://wa.me/918838313772">WhatsApp Booking</a></div></section>
+</main>
 
-<h2>Ready to Book Your Taxi?</h2>
-
-<p>
-One Way • Outstation • Airport Drop
-</p>
-
-<a class="btn"
-href="https://wa.me/918838313772">
-📱 Book on WhatsApp
-</a>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-<div class="footer-grid">
-
-<div>
-<h3>Vetttri One Way Travels</h3>
-<p>
-One Way and Outstation Taxi Service across
-Tamil Nadu, Kerala and Karnataka.
-</p>
-
-<br>
-
-<p>
-📞 +91 88383 13772
-</p>
-
-<p>
-📱 WhatsApp Booking Available
-</p>
-
-</div>
-
-<div>
-
-<h3>Quick Links</h3>
-
-<a href="#home">Home</a>
-<a href="#booking">Booking</a>
-<a href="#services">Services</a>
-<a href="#vehicles">Vehicles</a>
-<a href="#routes">Routes</a>
-<a href="#faq">FAQ</a>
-
-</div>
-
-<div>
-
-<h3>Our Services</h3>
-
-<a href="#services">One Way Taxi</a>
-<a href="#services">Outstation Taxi</a>
-<a href="#services">Airport Taxi</a>
-<a href="#services">Round Trip</a>
-<a href="#services">Corporate Travel</a>
-
-</div>
-
-</div>
-
-<div class="copyright">
-© 2026 Vetttri One Way Travels. All Rights Reserved.
-</div>
-
-</footer>
-
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp"
-href="https://wa.me/918838313772"
-target="_blank"
-aria-label="WhatsApp">
-💬
-</a>
+<footer><div class="wrap footer-grid">
+<div><a class="brand footer-brand" href="#home"><span class="brand-mark">V</span><strong>Vettri <i>Travels</i></strong></a><p>One Way & Outstation Cab Service • South India.</p></div>
+<div><h4>Explore Services</h4><a href="#booking">Book a Cab</a><a href="#cars">Available Cars</a><a href="#services">One Way Taxi</a><a href="#services">Airport Transfer</a></div>
+<div><h4>Popular Routes</h4><a href="#destinations">Chennai to Madurai</a><a href="#destinations">Chennai to Coimbatore</a><a href="#destinations">Chennai to Bangalore</a><a href="#destinations">Coimbatore to Kochi</a></div>
+<div><h4>Contact</h4><a href="tel:+918838313772">+91 88383 13772</a><a href="https://wa.me/918838313772">WhatsApp Booking</a><span>South India</span></div>
+<div style="text-align:center;margin-top:22px"><a href="admin.html" style="font-size:10px;color:#687382">Admin Login</a></div></div><div class="copyright">© <span id="year"></span> Vettri Travels. All rights reserved.</div></footer>
 
 <script>
-
-function swapLocations(){
-
-  const pickup =
-  document.getElementById("pickup");
-
-  const drop =
-  document.getElementById("drop");
-
-  const temp = pickup.value;
-
-  pickup.value = drop.value;
-
-  drop.value = temp;
-}
-
-
-document.getElementById("bookingForm")
-.addEventListener("submit",function(e){
-
-  e.preventDefault();
-
-  const name =
-  document.getElementById("name").value;
-
-  const mobile =
-  document.getElementById("mobile").value;
-
-  const pickup =
-  document.getElementById("pickup").value;
-
-  const drop =
-  document.getElementById("drop").value;
-
-  const date =
-  document.getElementById("date").value;
-
-  const time =
-  document.getElementById("time").value;
-
-  const trip =
-  document.getElementById("trip").value;
-
-  const ac =
-  document.getElementById("ac").value;
-
-  const vehicle =
-  document.getElementById("vehicle").value;
-
-
-  const message =
-`🚕 VETTTRI ONE WAY TRAVELS - NEW BOOKING
-
-👤 Name: ${name}
-
-📱 Mobile: ${mobile}
-
-📍 Pickup: ${pickup}
-
-📍 Drop: ${drop}
-
-📅 Date: ${date}
-
-⏰ Time: ${time}
-
-🔄 Trip: ${trip}
-
-❄️ AC/Non-AC: ${ac}
-
-🚗 Vehicle: ${vehicle}
-
-Please confirm my taxi booking.`;
-
-
-  const whatsapp =
-  "https://wa.me/918838313772?text="
-  + encodeURIComponent(message);
-
-  window.open(whatsapp,"_blank");
-
+let tripType="One Way", acType="AC", vehicle="Mini";
+const $=id=>document.getElementById(id);
+if($('date')) $('date').min=new Date().toISOString().split("T")[0];
+function swap(){[$("pickup").value,$("drop").value]=[$("drop").value,$("pickup").value]}
+function trip(el,v){tripType=v;document.querySelectorAll(".choice-row:not(.ac) .choice").forEach(x=>x.classList.remove("active"));el.classList.add("active")}
+function ac(el,v){acType=v;document.querySelectorAll(".ac .choice").forEach(x=>x.classList.remove("active"));el.classList.add("active")}
+document.querySelectorAll(".car-mini").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".car-mini").forEach(x=>x.classList.remove("active"));b.classList.add("active");vehicle=b.dataset.car}));
+function getBookings(){try{return JSON.parse(localStorage.getItem('vettriBookings')||'[]')}catch(e){return []}}
+function saveBookings(b){localStorage.setItem('vettriBookings',JSON.stringify(b))}
+$('bookForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const booking={id:'VT-'+Date.now().toString().slice(-8),createdAt:new Date().toISOString(),status:'Pending',tripType,acType,vehicle,
+  pickup:$('pickup').value.trim(),drop:$('drop').value.trim(),name:$('name').value.trim(),mobile:$('mobile').value.trim(),date:$('date').value,time:$('time').value};
+ const list=getBookings(); list.unshift(booking); saveBookings(list);
+ const msg=`Hello Vettri Travels,%0A%0A🚕 *NEW BOOKING REQUEST*%0ABooking ID: ${booking.id}%0AStatus: PENDING ADMIN APPROVAL%0ATrip Type: ${tripType}%0AAC: ${acType}%0APickup: ${encodeURIComponent(booking.pickup)}%0ADrop: ${encodeURIComponent(booking.drop)}%0AName: ${encodeURIComponent(booking.name)}%0AMobile: ${encodeURIComponent(booking.mobile)}%0ADate: ${booking.date}%0ATime: ${booking.time}%0AVehicle: ${vehicle}%0A%0APlease review and approve this booking in Admin Panel.`;
+ window.open("https://wa.me/918838313772?text="+msg,"_blank");
+ alert('Booking request submitted!\n\nBooking ID: '+booking.id+'\nStatus: Pending Admin Approval.\n\nThe admin will confirm your booking after review.');
+ e.target.reset(); document.querySelectorAll('.car-mini').forEach(x=>x.classList.remove('active')); document.querySelector('.car-mini').classList.add('active'); vehicle='Mini';
 });
-
+if($('year')) $('year').textContent=new Date().getFullYear();
 </script>
-
 </body>
 </html>
