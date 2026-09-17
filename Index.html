@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ONEWAY EXPRESS - One Way Outstation Drop Taxi service across Chennai and Tamil Nadu.">
+<title>ONEWAY EXPRESS | Outstation Drop Taxi</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:#f5f5f5;
+  color:#222;
+  line-height:1.5
+}
+
+header{
+  background:#111;
+  color:#fff;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800
+}
+
+.logo span{color:#ffc107}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600
+}
+
+.lang{
+  background:#ffc107;
+  color:#111;
+  border:0;
+  border-radius:7px;
+  padding:8px 12px;
+  font-weight:bold;
+  cursor:pointer
+}
+
+.hero{
+  background:linear-gradient(135deg,#111,#454545);
+  color:#fff;
+  padding:65px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px
+}
+
+.hero-text{max-width:620px}
+
+.hero h1{
+  font-size:50px;
+  margin-bottom:8px
+}
+
+.hero h1 span{color:#ffc107}
+
+.hero h2{margin-bottom:15px}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:24px
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 21px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  margin:5px;
+  border:0;
+  cursor:pointer
+}
+
+.call{
+  background:#ffc107;
+  color:#111
+}
+
+.whatsapp{
+  background:#25d366;
+  color:#fff
+}
+
+.booking{
+  background:#fff;
+  color:#222;
+  padding:25px;
+  border-radius:18px;
+  width:100%;
+  max-width:430px;
+  box-shadow:0 10px 30px #0005
+}
+
+.booking h2{
+  text-align:center;
+  margin-bottom:15px
+}
+
+.booking input,
+.booking select{
+  width:100%;
+  padding:13px;
+  margin:6px 0;
+  border:1px solid #ddd;
+  border-radius:7px;
+  font-size:15px
+}
+
+.booking button{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:8px;
+  background:#ffc107;
+  font-weight:bold;
+  font-size:16px;
+  margin-top:10px;
+  cursor:pointer
+}
+
+#fareBox{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  border-radius:10px;
+  background:#f1f1f1;
+  text-align:center
+}
+
+#fare{
+  font-size:25px;
+  font-weight:bold
+}
+
+.rate-section{background:#fff}
+
+.rate-note{
+  margin:-15px auto 25px;
+  max-width:700px
+}
+
+.rate-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:900px;
+  margin:auto
+}
+
+.rate-card{
+  border:1px solid #ddd;
+  border-radius:14px;
+  padding:22px;
+  background:#fafafa
+}
+
+.rate-card h3{font-size:21px}
+
+.price{
+  font-size:28px;
+  font-weight:800;
+  margin:8px 0;
+  color:#111
+}
+
+.extra{
+  margin-top:25px;
+  font-weight:600
+}
+
+section{
+  padding:55px 6%;
+  text-align:center
+}
+
+section h2{
+  margin-bottom:30px;
+  font-size:30px
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px
+}
+
+.card{
+  background:#fff;
+  padding:25px 15px;
+  border-radius:12px;
+  box-shadow:0 4px 15px #ddd
+}
+
+.icon{
+  font-size:40px;
+  margin-bottom:12px
+}
+
+.about{
+  background:#111;
+  color:#fff
+}
+
+.contact{
+  background:#ffc107
+}
+
+.address{
+  max-width:700px;
+  margin:0 auto 18px
+}
+
+.contact p{margin:6px}
+
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:25px
+}
+
+@media(max-width:800px){
+  header{
+    flex-direction:column;
+    gap:12px
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center
+  }
+
+  .hero h1{font-size:38px}
+
+  .cards,
+  .rate-grid{
+    grid-template-columns:1fr 1fr
+  }
+}
+
+@media(max-width:500px){
+  .cards,
+  .rate-grid{
+    grid-template-columns:1fr
+  }
+
+  .hero h1{font-size:32px}
+
+  .booking{padding:20px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">ONEWAY <span>EXPRESS</span></div>
+
+<nav>
+<a href="#home" data-en="Home" data-ta="முகப்பு">Home</a>
+<a href="#rates" data-en="Rates" data-ta="கட்டணம்">Rates</a>
+<a href="#services" data-en="Services" data-ta="சேவைகள்">Services</a>
+<a href="#booking" data-en="Booking" data-ta="Booking">Booking</a>
+<a href="#contact" data-en="Contact" data-ta="தொடர்பு">Contact</a>
+
+<button class="lang" onclick="toggleLanguage()">தமிழ்</button>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h1>ONEWAY <span>EXPRESS</span></h1>
+
+<h2 id="heroTitle">🚕 Outstation Drop Taxi</h2>
+
+<p id="heroText">
+Safe, comfortable and reliable one-way taxi service across Chennai and Tamil Nadu.
+</p>
+
+<a class="btn call" href="tel:8838313772">📞 Call Now</a>
+
+<a class="btn whatsapp"
+href="https://wa.me/918838313772"
+target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+<div class="booking" id="booking">
+
+<h2 id="bookingTitle">🚕 Book Your Taxi</h2>
+
+<input id="name" type="text" placeholder="Your Name">
+
+<input id="phone" type="tel" placeholder="Mobile Number">
+
+<input id="pickup" type="text" placeholder="Pickup Location">
+
+<input id="drop" type="text" placeholder="Drop Location">
+
+<input id="distance" type="number" min="1" placeholder="Distance in KM">
+
+<input id="date" type="date">
+
+<input id="time" type="time">
+
+<select id="vehicle">
+
+<option value="">Select Vehicle</option>
+
+<option value="Sedan">Sedan — ₹14/km</option>
+
+<option value="Ertiga">Maruti Ertiga — ₹20/km</option>
+
+<option value="Innova">Toyota Innova — ₹21/km</option>
+
+</select>
+
+<button id="fareBtn" onclick="calculateFare()">
+💰 Check Fare
+</button>
+
+<div id="fareBox">
+
+<p id="estimated">Estimated Fare</p>
+
+<div id="fare">₹0</div>
+
+<small id="fareInfo">
+Minimum 130 KM + Driver Bata ₹400.
+Toll, Permit & Night Charges Extra.
+</small>
+
+<button id="waBtn" onclick="sendBooking()">
+💬 Book on WhatsApp
+</button>
+
+</div>
+
+</div>
+</section>
+
+<section class="rate-section" id="rates">
+
+<h2 id="ratesTitle">🚕 Taxi Rates</h2>
+
+<p class="rate-note" id="rateNote">
+Minimum billing: 130 KM.
+Driver Bata: ₹400.
+Toll, Permit and Night Charges are extra.
+</p>
+
+<div class="rate-grid">
+
+<div class="rate-card">
+<h3>🚕 Sedan</h3>
+<div class="price">₹14/km</div>
+<p>Minimum 130 KM</p>
+</div>
+
+<div class="rate-card">
+<h3>🚙 Maruti Ertiga</h3>
+<div class="price">₹20/km</div>
+<p>Minimum 130 KM</p>
+</div>
+
+<div class="rate-card">
+<h3>🚐 Toyota Innova</h3>
+<div class="price">₹21/km</div>
+<p>Minimum 130 KM</p>
+</div>
+
+</div>
+
+<p class="extra">
+👨‍✈️ Driver Bata: ₹400 |
+🛣️ Toll: Extra |
+📄 Permit: Extra |
+🌙 Night Charges: Extra
+</p>
+
+</section>
+
+<section id="services">
+
+<h2 id="servicesTitle">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🚕</div>
+<h3>One Way Drop</h3>
+<p>Easy one-way taxi booking.</p>
+</div>
+
+<div class="card">
+<div class="icon">🛣️</div>
+<h3>Outstation</h3>
+<p>Tamil Nadu wide service.</p>
+</div>
+
+<div class="card">
+<div class="icon">⏰</div>
+<h3>On Time</h3>
+<p>Pickup according to your schedule.</p>
+</div>
+
+<div class="card">
+<div class="icon">🛡️</div>
+<h3>Safe Travel</h3>
+<p>Comfortable and reliable service.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<h2>Why Choose ONEWAY EXPRESS?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>✓ Easy Booking</h3>
+<p>Quick booking through WhatsApp.</p>
+</div>
+
+<div class="card">
+<h3>✓ Multiple Vehicles</h3>
+<p>Choose the right vehicle.</p>
+</div>
+
+<div class="card">
+<h3>✓ Tamil Nadu</h3>
+<p>Outstation drop service.</p>
+</div>
+
+<div class="card">
+<h3>✓ Customer Support</h3>
+<p>Call us for fare enquiry.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>📞 <b>8838313772</b></p>
+
+<p>💬 <b>WhatsApp: 8838313772</b></p>
+
+<p>✉️ <b>onewayexpresstamilnadu@gmail.com</b></p>
+
+<p class="address">
+📍 <b>Address:</b>
+13/7, Zion Street, Mugappair, Chennai, Tamil Nadu
+</p>
+
+<a class="btn call" href="tel:8838313772">
+📞 Call Now
+</a>
+
+<a class="btn whatsapp"
+href="https://wa.me/918838313772"
+target="_blank">
+💬 WhatsApp Booking
+</a>
+
+</section>
+
+<footer>
+© 2026 ONEWAY EXPRESS – Outstation Drop Taxi
+</footer>
+
+<script>
+
+let tamil=false;
+
+function toggleLanguage(){
+
+tamil=!tamil;
+
+document.querySelectorAll("[data-en]").forEach(e=>{
+e.textContent=tamil?e.dataset.ta:e.dataset.en;
+});
+
+document.querySelector(".lang").textContent=
+tamil?"English":"தமிழ்";
+
+document.getElementById("heroTitle").textContent=
+tamil?
+"🚕 Outstation Drop Taxi":
+"🚕 Outstation Drop Taxi";
+
+document.getElementById("heroText").textContent=
+tamil?
+"சென்னை மற்றும் தமிழ்நாடு முழுவதும் பாதுகாப்பான, வசதியான மற்றும் நம்பகமான One Way Taxi சேவை.":
+"Safe, comfortable and reliable one-way taxi service across Chennai and Tamil Nadu.";
+
+document.getElementById("bookingTitle").textContent=
+tamil?
+"🚕 உங்கள் Taxi-யை Book செய்யுங்கள்":
+"🚕 Book Your Taxi";
+
+document.getElementById("ratesTitle").textContent=
+tamil?
+"🚕 Taxi கட்டணங்கள்":
+"🚕 Taxi Rates";
+
+document.getElementById("rateNote").textContent=
+tamil?
+"Minimum 130 KM. Driver Bata ₹400. Toll, Permit மற்றும் Night Charges Extra.":
+"Minimum billing: 130 KM. Driver Bata: ₹400. Toll, Permit and Night Charges are extra.";
+
+document.getElementById("fareBtn").textContent=
+tamil?
+"💰 கட்டணத்தை பார்க்கவும்":
+"💰 Check Fare";
+
+document.getElementById("estimated").textContent=
+tamil?
+"மதிப்பிடப்பட்ட கட்டணம்":
+"Estimated Fare";
+
+document.getElementById("fareInfo").textContent=
+tamil?
+"Minimum 130 KM + Driver Bata ₹400. Toll, Permit & Night Charges Extra.":
+"Minimum 130 KM + Driver Bata ₹400. Toll, Permit & Night Charges Extra.";
+
+document.getElementById("waBtn").textContent=
+tamil?
+"💬 WhatsApp மூலம் Book செய்யவும்":
+"💬 Book on WhatsApp";
+}
+
+function calculateFare(){
+
+const distance=
+Number(document.getElementById("distance").value);
+
+const vehicle=
+document.getElementById("vehicle").value;
+
+if(!distance||distance<=0||!vehicle){
+
+alert(
+tamil?
+"Distance மற்றும் Vehicle-ஐ தேர்வு செய்யவும்.":
+"Please enter distance and select vehicle."
+);
+
+return;
+}
+
+const rates={
+Sedan:14,
+Ertiga:20,
+Innova:21
+};
+
+const billedDistance=
+Math.max(distance,130);
+
+const fare=
+(billedDistance*rates[vehicle])+400;
+
+document.getElementById("fare").innerText=
+"₹"+fare.toLocaleString("en-IN");
+
+document.getElementById("fareBox").style.display=
+"block";
+}
+
+function sendBooking(){
+
+const ids=[
+"name",
+"phone",
+"pickup",
+"drop",
+"distance",
+"date",
+"time",
+"vehicle"
+];
+
+const v={};
+let missing=false;
+
+ids.forEach(id=>{
+v[id]=document.getElementById(id).value.trim();
+
+if(!v[id]) missing=true;
+});
+
+if(missing){
+
+alert(
+tamil?
+"Please fill all booking details.":
+"Please fill all booking details."
+);
+
+return;
+}
+
+const message=
+`🚕 ONEWAY EXPRESS - TAXI BOOKING
+
+👤 Name: ${v.name}
+📱 Phone: ${v.phone}
+📍 Pickup: ${v.pickup}
+🏁 Drop: ${v.drop}
+🛣️ Distance: ${v.distance} KM
+📅 Date: ${v.date}
+⏰ Time: ${v.time}
+🚗 Vehicle: ${v.vehicle}
+💰 Estimated Fare: ${document.getElementById("fare").innerText}
+
+Minimum 130 KM | Driver Bata ₹400 | Toll/Permit/Night Charges Extra`;
+
+window.open(
+"https://wa.me/918838313772?text="+
+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+</html>
